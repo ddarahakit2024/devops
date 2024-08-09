@@ -49,3 +49,5 @@ jobs:
           git clone https://github.com/ddarahakit2024/devops.git
           chmod 755 /home/ubuntu/devops/deployment.sh
           /home/ubuntu/devops/deployment.sh
+          \r\n
+          echo "end"
