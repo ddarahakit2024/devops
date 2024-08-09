@@ -10,14 +10,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: get code from github
-      uses: appleboy/ssh-action@v1.0.3
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    - name: Set up JDK 17
+      uses: actions/setup-java@v3
       with:
-        host: ${{ secrets.REMOTE_HOST }}
-        username: ${{ secrets.REMOTE_USER }}
-        key: ${{ secrets.SSH_KEY }}
-        port: ${{ secrets.REMOTE_PORT }}
-        script: |
-          rm -rf /home/ubuntu/devops
-          git clone https://github.com/ddarahakit2024/devops.git
-          bash /home/ubuntu/devops/deployment.sh
+        java-version: '17'
+
+    - name: Build with Gradle
+      run: ./gradlew build
+
