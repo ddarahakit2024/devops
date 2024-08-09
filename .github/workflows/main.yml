@@ -44,10 +44,9 @@ jobs:
         username: ${{ secrets.REMOTE_USER }}
         key: ${{ secrets.SSH_KEY }}
         port: ${{ secrets.REMOTE_PORT }}
+        script_stop: true
         script: |
           rm -rf /home/ubuntu/devops 
           git clone https://github.com/ddarahakit2024/devops.git
           chmod 755 /home/ubuntu/devops/deployment.sh
           /home/ubuntu/devops/deployment.sh
-          \r\n
-          echo "end"
