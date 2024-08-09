@@ -1,5 +1,8 @@
+#!/bin/bash
 
-gradle -b /home/ubuntu/devops/build.gradle build
+echo "빌드 중..."
+/opt/gradle/gradle-8.8/bin/gradle -b /home/ubuntu/devops/build.gradle build
+echo "빌드 완료!"
 
 spring_pid=`ps -ef | grep demo | grep -v grep | awk -F " " '{print $2}'`
 
@@ -11,4 +14,5 @@ else
         echo "실행중인 백엔드 프로세스가 없습니다!"
 fi
 
+echo "스프링 프로젝트 실행 중..."
 nohup java -jar /home/ubuntu/devops/build/libs/demo-0.0.1-SNAPSHOT.jar &
