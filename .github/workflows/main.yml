@@ -48,4 +48,4 @@ jobs:
           rm -rf /home/ubuntu/devops 
           git clone https://github.com/ddarahakit2024/devops.git
           chmod 755 /home/ubuntu/devops/deployment.sh
-          nohup /home/ubuntu/devops/deployment.sh &
+          /home/ubuntu/devops/deployment.sh
