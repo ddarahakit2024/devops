@@ -36,3 +36,14 @@ jobs:
         port: ${{ secrets.REMOTE_PORT }}
         source: "build/libs/demo-0.0.1-SNAPSHOT.jar"
         target: "demo-0.0.1-SNAPSHOT.jar"
+
+    - name: restart spring project
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: ${{ secrets.REMOTE_HOST }}
+        username: ${{ secrets.REMOTE_USER }}
+        key: ${{ secrets.SSH_KEY }}
+        port: ${{ secrets.REMOTE_PORT }}
+        script: |
+          git clone https://github.com/ddarahakit2024/devops.git
+          bash /home/ubuntu/devops/deployment.sh
