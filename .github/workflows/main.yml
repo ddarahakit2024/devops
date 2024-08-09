@@ -18,4 +18,6 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         port: ${{ secrets.REMOTE_PORT }}
         script: |
-          echo test > /tmp/abcd
+          rm -rf ./devops
+          git clone https://github.com/ddarahakit2024/devops.git
+          ./devops/gradle build
