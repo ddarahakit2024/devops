@@ -20,4 +20,4 @@ jobs:
         script: |
           rm -rf ./devops
           git clone https://github.com/ddarahakit2024/devops.git
-          ./devops/gradle build
+          bash /home/ubuntu/devops/deployment.sh
